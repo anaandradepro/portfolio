@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio de Ana Luiza Andrade
 
-## Getting Started
+Template completo de landing page com design premium, Next.js, Tailwind CSS v4, Prisma (NextAuth/Stripe fields ready), Design System com tokens gerenciáveis e Storybook (opcional).
 
-First, run the development server:
+## Tecnologias
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Framework:** Next.js 15 (App Router, Turbopack)
+- **Styling:** Tailwind CSS v4
+- **Database:** Prisma ORM (+ PostgreSQL no Neon.tech)
+- **Design System:** Tokens em `design-system/tokens.ts` (Theme Wired)
+- **Theme:** Dark / Light mode (via `next-themes`)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como rodar localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone o repositório e instale as dependências:
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Configure as variáveis de ambiente:
+   Copie `.env.example` para `.env` e adicione a sua `DATABASE_URL` do banco Neon (gratuito).
+   ```bash
+   cp .env.example .env
+   ```
 
-## Learn More
+3. (Opcional) Suba o esquema no banco de dados:
+   ```bash
+   npx prisma db push
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Como o Design System é "Wired", gere as variáveis CSS a partir dos tokens:
+   ```bash
+   npm run tokens
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Rode o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+   Acesse http://localhost:3000 para visualizar o projeto.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tokens e Design System (SSOT)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Os tokens de design ficam em `design-system/tokens.ts`. Se precisar alterar as cores:
+1. Edite `tokens.ts`.
+2. Rode `npm run tokens`.
+3. O `globals.css` será atualizado automaticamente com as novas variáveis mantendo assim tudo centralizado.

@@ -1,6 +1,25 @@
-import { ArrowRight, FileText, Linkedin } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
+const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
 
 export default function Hero() {
   return (
@@ -43,7 +62,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-sm font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 hover:scale-105 transition-all duration-300"
           >
-            <Linkedin className="w-5 h-5" />
+            <LinkedinIcon className="w-5 h-5" />
             LinkedIn
           </Link>
           <Link

@@ -294,6 +294,7 @@ h2 small{display:block;margin-top:6px;font-size:1rem;font-weight:400;color:var(-
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--good:#5fd18d;--bad:#ff7a70}}
 :root[data-theme="dark"]{--good:#5fd18d;--bad:#ff7a70}
 .stats--2{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:40px}
+.stats--solo{grid-template-columns:minmax(0,1fr)}
 .stats--2 .stat b{display:flex;align-items:baseline;flex-wrap:wrap;gap:.18em}
 .stats--2 .stat b > span:not(.sr){font-size:inherit;line-height:inherit;color:inherit}
 .stats--2 .stat b > .stat__arrow{color:var(--muted-foreground)}
@@ -420,10 +421,9 @@ h2 small{display:block;margin-top:6px;font-size:1rem;font-weight:400;color:var(-
 
       <section id="resultados" class="section prose">
         <h2><strong>Resultados</strong></h2>
-        <p>Dois meses após a virada para a nova experiência, um novo CSAT mostrou queda de 60% para 30% de usuários insatisfeitos com o módulo de inadimplência. Os satisfeitos subiram de 29% para 65%.</p>
-        <div class="stats stats--2">
+        <p>Dois meses após a virada para a nova experiência, um novo CSAT mostrou que os usuários satisfeitos com o módulo de inadimplência subiram de 29% para 65%.</p>
+        <div class="stats stats--2 stats--solo">
           <div class="stat stat--good"><b><span class="stat__from">29%</span><span class="stat__arrow" aria-hidden="true">→</span><span class="sr">para</span><span>65%</span></b><span>de usuários satisfeitos com o módulo: mais que o dobro, dois meses após o lançamento</span></div>
-          <div class="stat stat--bad"><b><span class="stat__from">60%</span><span class="stat__arrow" aria-hidden="true">→</span><span class="sr">para</span><span>30%</span></b><span>de usuários insatisfeitos com o módulo: a insatisfação caiu pela metade</span></div>
         </div>
         <p>Em novas visitas às imobiliárias, algo que faço com frequência para continuar próxima dos usuários, elogiaram a organização das informações, a facilidade de encontrá-las e a intuitividade da interface.</p>
       </section>
